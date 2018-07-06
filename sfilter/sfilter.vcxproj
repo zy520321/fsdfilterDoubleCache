@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A81AA722-8E87-4D5F-992C-4D0F134867EE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>sfilter</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetExt>.sys</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.sys</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_X86_=1;i386=1;STD_CALL;CONDITION_HANDLING=1;NT_INST=0;WIN32=100;_NT1X_=100;WINNT=1;WIN32_LEAN_AND_MEAN=1;DEVL=1;FPO=0;NDEBUG;_DLL=1;DBG=1;DEPRECATE_DDK_FUNCTIONS;_WIN32_WINNT=_WIN32_WINNT_LONGHORN;WINVER=0x0601;_WIN32_IE=0x0700;NTDDI_VERSION=NTDDI_LONGHORN;BINARY_COMPATIBLE=0;NT;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\WinDDK\7600.16385.1\inc\wdf\umdf\1.9;F:\WinDDK\7600.16385.1\inc\wdf\kmdf\1.9;F:\WinDDK\7600.16385.1\inc\mfc42;F:\WinDDK\7600.16385.1\inc\ddk;F:\WinDDK\7600.16385.1\inc\crt;F:\WinDDK\7600.16385.1\inc\atl71;F:\WinDDK\7600.16385.1\inc\api</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>F:\WinDDK\7600.16385.1\lib\wxp\i386</AdditionalLibraryDirectories>
+      <AdditionalDependencies>fltmgr.lib;ntoskrnl.lib;hal.lib;wmilib.lib;bufferoverflowK.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+      <BaseAddress>0x10000</BaseAddress>
+      <StackReserveSize>262144</StackReserveSize>
+      <StackCommitSize>4096</StackCommitSize>
+      <HeapReserveSize>262144</HeapReserveSize>
+      <HeapCommitSize>4096</HeapCommitSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_X86_=1;i386=1;STD_CALL;CONDITION_HANDLING=1;NT_INST=0;WIN32=100;_NT1X_=100;WINNT=1;WIN32_LEAN_AND_MEAN=1;DEVL=1;FPO=0;NDEBUG;_DLL=1;DBG=1;DEPRECATE_DDK_FUNCTIONS;_WIN32_WINNT=_WIN32_WINNT_LONGHORN;WINVER=0x0601;_WIN32_IE=0x0700;NTDDI_VERSION=NTDDI_LONGHORN;BINARY_COMPATIBLE=0;NT;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;$(IFSKIT_INC_PATH);$(TARGET_INC_PATH);$(CRT_INC_PATH);$(DDK_INC_PATH);$(WDM_INC_PATH);F:\SDK\WinDDK\7600.16385.1\inc\ddk;F:\SDK\WinDDK\7600.16385.1\inc\api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CallingConvention>StdCall</CallingConvention>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>F:\SDK\WinDDK\7600.16385.1\lib\wxp\i386</AdditionalLibraryDirectories>
+      <AdditionalDependencies>hal.lib;wdm.lib;wdmsec.lib;wmilib.lib;bufferoverflowK.lib;VirtualizerDDK.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+      <BaseAddress>0x10000</BaseAddress>
+      <HeapReserveSize>
+      </HeapReserveSize>
+      <HeapCommitSize>
+      </HeapCommitSize>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <StackReserveSize>262144</StackReserveSize>
+      <StackCommitSize>4096</StackCommitSize>
+      <SetChecksum>true</SetChecksum>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Aes.h" />
+    <ClInclude Include="Aesopt.h" />
+    <ClInclude Include="Aestab.h" />
+    <ClInclude Include="Blowfish.h" />
+    <ClInclude Include="Cast.h" />
+    <ClInclude Include="Des.h" />
+    <ClInclude Include="Endian.h" />
+    <ClInclude Include="Fake_function.h" />
+    <ClInclude Include="filespy.h" />
+    <ClInclude Include="fspydef.h" />
+    <ClInclude Include="fspyKern.h" />
+    <ClInclude Include="LOG.h" />
+    <ClInclude Include="MD5.h" />
+    <ClInclude Include="Md5g.h" />
+    <ClInclude Include="namelookupdef.h" />
+    <ClInclude Include="PfpCreate.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Rmd160.h" />
+    <ClInclude Include="Serpent.h" />
+    <ClInclude Include="Sha1.h" />
+    <ClInclude Include="Sha2.h" />
+    <ClInclude Include="Tcdefs.h" />
+    <ClInclude Include="Twofish.h" />
+    <ClInclude Include="usbsecure.h" />
+    <ClInclude Include="VerifyKey.h" />
+    <ClInclude Include="Whirlpool.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Aescrypt.c" />
+    <ClCompile Include="Aeskey.c" />
+    <ClCompile Include="Aestab.c" />
+    <ClCompile Include="Blowfish.c" />
+    <ClCompile Include="Cast.c" />
+    <ClCompile Include="DelayClose.c" />
+    <ClCompile Include="Des.c" />
+    <ClCompile Include="DeviceIoControl.c" />
+    <ClCompile Include="Endian.c" />
+    <ClCompile Include="Fake_function.c" />
+    <ClCompile Include="fastlock.c" />
+    <ClCompile Include="fastquery.c" />
+    <ClCompile Include="filespy.c" />
+    <ClCompile Include="fspyCtx.c" />
+    <ClCompile Include="fspyHash.c" />
+    <ClCompile Include="fspyLib.c" />
+    <ClCompile Include="fspyTx.c" />
+    <ClCompile Include="fstiosup.c" />
+    <ClCompile Include="Log.c" />
+    <ClCompile Include="md5.c" />
+    <ClCompile Include="namelookup.c" />
+    <ClCompile Include="PfpBackUpThread.c" />
+    <ClCompile Include="pfpCache.c" />
+    <ClCompile Include="Pfpcleanup.c" />
+    <ClCompile Include="Pfpclose.c" />
+    <ClCompile Include="PfpConfigSetting.c" />
+    <ClCompile Include="PfpCreate.c" />
+    <ClCompile Include="PfpData.c" />
+    <ClCompile Include="Pfpdeviosup.c" />
+    <ClCompile Include="Pfpdisp.c" />
+    <ClCompile Include="PfpFile.c" />
+    <ClCompile Include="PfpFileInfo.c" />
+    <ClCompile Include="PfpFlush.c" />
+    <ClCompile Include="PfpFolderProtect.c" />
+    <ClCompile Include="PfpHide.c" />
+    <ClCompile Include="PfpProcessExclude.c" />
+    <ClCompile Include="PfpProcessInfo.c" />
+    <ClCompile Include="PfpRead.c" />
+    <ClCompile Include="PfpUsbDevice.c" />
+    <ClCompile Include="PfpUsbSecure.c" />
+    <ClCompile Include="PfpVirtualDir.c" />
+    <ClCompile Include="Pfpworkque.c" />
+    <ClCompile Include="PfpWrite.c" />
+    <ClCompile Include="ProcNotify.c" />
+    <ClCompile Include="RegFilter.c" />
+    <ClCompile Include="resrcsup.c" />
+    <ClCompile Include="Rmd160.c" />
+    <ClCompile Include="Serpent.c" />
+    <ClCompile Include="Sha1.c" />
+    <ClCompile Include="Sha2.c" />
+    <ClCompile Include="strucsup.c" />
+    <ClCompile Include="Twofish.c" />
+    <ClCompile Include="VerifyKey.c" />
+    <ClCompile Include="Whirlpool.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="filespy.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
